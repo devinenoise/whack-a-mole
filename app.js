@@ -28,7 +28,11 @@ function peep() {
   setTimeout(() => {
     // return the mole
     hole.classList.remove('up');
-    if (!timeUp) peep(); // stops the game
+    if (!timeUp) {
+      peep();
+    } else {
+      alert('Game Over, Try Again'); // stops the game
+    }
   }, time); // set to time
 }
 
