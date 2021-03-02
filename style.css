@@ -33,7 +33,8 @@ body {
 }
 
 .button:hover {
-  background-color: rgba(0, 24, 129, 0.521);
+  background-color: rgba(0, 24, 129, 0.767);
+  color: white;
 }
 
 h1 {
@@ -56,6 +57,11 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+}
+
+.game-over {
+  font-size: 10rem;
+  color: red;
 }
 
 .hole {

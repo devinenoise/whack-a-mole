@@ -1,6 +1,8 @@
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
+const gameOver = document.querySelector('.game-over');
+const button = document.querySelector('.button');
 let lastHole;
 let timeUp = false;
 let score = 0;
@@ -22,7 +24,7 @@ function randomHole(holes) {
 
 // random time and hole for the mole
 function peep() {
-  const time = randomTime(200, 1000);
+  const time = randomTime(400, 1000);
   const hole = randomHole(holes);
   hole.classList.add('up'); // add class to bring mole up
   setTimeout(() => {
@@ -31,12 +33,15 @@ function peep() {
     if (!timeUp) {
       peep();
     } else {
-      alert('Game Over, Try Again'); // stops the game
+      gameOver.textContent = `GAME OVER`; // stops the game
+      button.textContent = `Try Again`;
     }
   }, time); // set to time
 }
 
 function startGame() {
+  gameOver.textContent = '';
+  button.textContent = 'Playing';
   scoreBoard.textContent = 0; // reset score
   timeUp = false;
   score = 0;
